@@ -1,6 +1,21 @@
 name: Actions Workflow
 
 on: 
+  push:
+    branches:
+      - master
+      - feature/* # matches feature/featA, feature/featB
+      - feature/** # matches feature/featA/feat1 feature/featB/feat2
+      - '!feature/featC' # excludes feature/featC
+  # branches-ignore: # it will ignore branches (it can not be togethre with branches tag)
+  #   - some_brance
+    tags:
+      - v1.*
+    paths:
+      - '**.js' # It will run only when js files are pushed
+      - '!filename.js' # it will exclude js files
+    # paths-ignore: # it will ignore docs directory (it can not be together with paths tag)
+    #   - 'docs/**'
   repository_dispatch:
     types: [build]
   schedule:

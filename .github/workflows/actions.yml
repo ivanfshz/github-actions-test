@@ -41,10 +41,17 @@ jobs:
           # git clone git@github:$GITHUB_REPOSITORY
           # git checkout $GITHUB_SHA 
       - name: Checkout
-      - uses: actions/checkout@v1
+        uses: actions/checkout@v1
       - name: List Files After checkout
         run: |
           pwd
           ls -a
+      - name: Simple JS Action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: John
+      - name: Log Gretting Time
+        run: echo "${{ steps.greet.outputs.time }}"
 
    

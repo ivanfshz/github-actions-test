@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - develop
       - feature/* # matches feature/featA, feature/featB
       - feature/** # matches feature/featA/feat1 feature/featB/feat2
       - '!feature/featC' # excludes feature/featC

@@ -21,7 +21,6 @@ on:
   schedule:
     - cron: "0/5 * * FEB MON"
     - cron: "0/6 * * FEB MON"
-  push:
   pull_request: 
     types: [closed, assigned, opened, reopened]
 
